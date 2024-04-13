@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Web Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-media {
+            margin-top: 10px;
+        }
+        .accordion {
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 10px;
+            padding: 10px;
+        }
+        .breadcrumb {
+            background-color: #f2f2f2;
+            margin: 10px;
+            padding: 10px;
+        }
+        .card {
+            background-color: #fff;
+            color: #333;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Logo</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button>Signup</button>
+            <button>Login</button>
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="accordion">
+        <h2>Accordion</h2>
+        <button class="accordion-btn">Section 1</button>
+        <div class="panel">
+            <p>Content for Section 1</p>
+        </div>
+        <button class="accordion-btn">Section 2</button>
+        <div class="panel">
+            <p>Content for Section 2</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <h2>Breadcrumb</h2>
+        <a href="#">Home</a> > <a href="#">Category</a> > Current Page
+    </div>
+
+    <div class="card">
+        <h2>Card 1</h2>
+        <p>This is the content of card 1</p>
+    </div>
+    <div class="card">
+        <h2>Card 2</h2>
+        <p>This is the content of card 2</p>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2022 Colorful Web Page</p>
+    </footer>
+
+    <script>
+        // Add your JavaScript here
+        var acc = document.getElementsByClassName("accordion-btn");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
